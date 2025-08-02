@@ -1,0 +1,121 @@
+{
+  "info": {
+    "name": "DeliveryAgent API",
+    "_postman_id": "1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14",
+    "description": "CRUD operations for DeliveryAgent microservice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Delivery Agent",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Ravi\", \"phone\": \"9876543210\", \"location\": \"Pune\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/agents",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "agents"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Delivery Agents",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/agents",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "agents"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Delivery Agent by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/agents/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "agents",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Delivery Agent",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"isAvailable\": false, \"location\": \"Mumbai\"}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/agents/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "agents",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Delivery Agent",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/agents/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "agents",
+            "1"
+          ]
+        }
+      }
+    }
+  ]
+}

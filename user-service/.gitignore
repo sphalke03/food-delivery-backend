@@ -1,0 +1,11 @@
+# Node.js dependencies
+node_modules/
+
+# TypeScript build output
+dist/
+
+# Environment variables (DO NOT COMMIT)
+.env
+
+# Logs or temp files (optional but recommended)
+*.log

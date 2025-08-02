@@ -1,0 +1,29 @@
+/src
+  ├── entities/
+  │   ├── User.ts
+  │   ├── Restaurant.ts
+  │   ├── MenuItem.ts
+  │   ├── Order.ts
+  │   ├── DeliveryAgent.ts
+  │   └── Rating.ts
+  ├── routes/
+  │   ├── user.routes.ts
+  │   ├── restaurant.routes.ts
+  │   ├── order.routes.ts
+  │   ├── delivery.routes.ts
+  │   └── rating.routes.ts
+  ├── controllers/
+  │   ├── user.controller.ts
+  │   ├── restaurant.controller.ts
+  │   ├── order.controller.ts
+  │   ├── delivery.controller.ts
+  │   └── rating.controller.ts
+  ├── services/
+  │   ├── user.service.ts
+  │   ├── restaurant.service.ts
+  │   ├── order.service.ts
+  │   ├── delivery.service.ts
+  │   └── rating.service.ts
+  ├── utils/
+  │   └── db.ts           # DB connection
+  ├── index.ts            # Main server entry point

@@ -1,0 +1,35 @@
+{
+  "info": {
+    "name": "Food Delivery API",
+    "_postman_id": "abc-123",
+    "description": "Test API for User, Restaurant, and Delivery services",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Online Restaurants",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/user/restaurants?hour=15",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "user", "restaurants"],
+          "query": [{ "key": "hour", "value": "15" }]
+        }
+      }
+    },
+    {
+      "name": "Place Order",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": 1,\n  \"restaurantId\": 2,\n  \"items\": [1, 2]\n}"
+        },
+        "url": { "raw": "http://localhost:3000/api/user/order", "host": ["localhost"], "port": "3000", "path": ["api", "user", "order"] }
+      }
+    }
+  ]
+}
