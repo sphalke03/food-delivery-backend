@@ -1,0 +1,135 @@
+# 🍔 Food Delivery Microservices – Setup & Run Guide
+
+This guide helps you set up and run the complete microservice-based food delivery backend using Docker Compose.
+
+---
+
+## 📁 Project Structure
+
+```
+food-delivery-backend/
+├── user-service/
+│   ├── src/
+│   ├── .env
+│   ├── Dockerfile
+│   └── package.json
+├── restaurant-user-service/
+│   ├── src/
+│   ├── .env
+│   ├── Dockerfile
+│   └── package.json
+├── delivery-agent-service/
+│   ├── src/
+│   ├── .env
+│   ├── Dockerfile
+│   └── package.json
+├── docker-compose.yml
+└── README.md
+```
+
+---
+
+## 🔧 Prerequisites
+
+1. **Install Docker Desktop** – [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+2. **Install Git (optional)** – [https://git-scm.com/downloads](https://git-scm.com/downloads)
+3. **Install Postman** – [https://www.postman.com/downloads](https://www.postman.com/downloads)
+
+---
+
+## ⚙️ Step-by-Step Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/<your-username>/food-delivery-backend.git
+cd food-delivery-backend
+```
+
+### 2. Check `.env` files
+
+Each microservice (`user-service`, `restaurant-user-service`, `delivery-agent-service`) must have a `.env` file:
+
+```env
+PORT=300X
+DB_HOST=db
+DB_PORT=5432
+DB_USERNAME=postgres
+DB_PASSWORD=DATABASE
+DB_NAME=food_delivery_db
+```
+
+Replace `300X` with:
+
+* `3001` for `user-service`
+* `3002` for `restaurant-user-service`
+* `3003` for `delivery-agent-service`
+
+### 3. Start All Services
+
+```bash
+docker-compose down -v  # optional: clean volumes if reinitializing
+docker-compose up --build
+```
+
+### 4. Verify Everything is Running
+
+Check in browser:
+
+* [http://localhost:3001](http://localhost:3001) → User Service
+* [http://localhost:3002](http://localhost:3002) → Restaurant Service
+* [http://localhost:3003](http://localhost:3003) → Delivery Agent Service
+
+You should also see logs like:
+
+* `Connected to database`
+* `Server is running on port 300X`
+
+---
+
+## 🧪 Test with Postman
+
+1. Import this collection: [Postman Collection JSON](sandbox:/mnt/data/food-delivery-api.postman_collection.json)
+2. Set the environment:
+
+```json
+{
+  "user_service": "http://localhost:3001",
+  "restaurant_service": "http://localhost:3002",
+  "delivery_service": "http://localhost:3003"
+}
+```
+
+3. Use the following endpoints:
+
+### User Service
+
+* `POST /api/users/register`
+* `POST /api/users/login`
+
+### Restaurant Service
+
+* `GET /api/restaurants`
+* `POST /api/restaurants`
+* `POST /api/ratings`
+
+### Delivery Agent Service
+
+* `GET /api/delivery-agents`
+* `POST /api/delivery-agents`
+
+---
+
+## 📦 Stop & Clean
+
+To stop and clean up all containers and volumes:
+
+```bash
+docker-compose down -v
+```
+
+---
+
+## 📄 License
+
+This project is for demo purposes. 
